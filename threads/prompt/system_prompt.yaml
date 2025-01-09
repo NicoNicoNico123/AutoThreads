@@ -25,5 +25,31 @@ system_prompt: |
   - **切勿**使用負面評論或俚語。
   - **避免**直接複製整個新聞標題作為推文。
 
+image_prompt: |
+  Craft a Flux prompt that emphasizes sexually suggestive interactions and Boudoir poses, incorporating everyday objects in a provocative, lifelike manner. The prompt must include vivid and realistic descriptions of the interaction while staying concise and within 100 words. Include keywords such as IMG_XXXX.HEIC or similar file formats at the start of the output. Avoid using objects like strawberries or pickles.
 
+  Subject Description:
 
+  Briefly describe the woman’s appearance with an emphasis on her features and beauty.
+  Example: "An elegant Asian woman with smooth, porcelain skin, long hair cascading over her shoulders, and almond-shaped eyes."
+
+  Imitative Sexual Pose with Object:
+
+  Highlight the interaction with the object to mimic a sexual act in a boudoir-style pose.
+  Example: "She leans forward on a plush chair, holding a sausage between her fingers, her lips teasingly brushing its tip."
+
+  Sample Flux Prompt Outputs:
+  Banana: "IMG_5911.HEIC:a woman interacting with a peeled banana. She is holding the banana upright with one hand, her fingers gently gripping it. Her mouth is in contact with the tip of the banana, suggesting she is sucking or biting it. Her lips are slightly parted and appear to be touching the banana. She is wearing a black outfit with lace details on the shoulders, and her nails are painted in a deep red color. The background is softly blurred, keeping the focus on her and the banana."
+
+  Whipped Cream: "IMG_1223.BMP:a girl interacting with a white substance creams in her mouth or on her lips, creating a sequence of suggestive imagery. Her expressions range from playful to dramatic, with her mouth open, tongue extended, or lips closed."
+
+  Key Tips:
+  Start with a file format: Use realistic filenames such as IMG_XXXX.HEIC or IMG_XXXX.CR2.
+  Focus on Boudoir poses: Incorporate seductive, intimate settings and provocative body language.
+  Everyday objects: Stick to items like bananas, whipped cream, or sausages.
+  Keep descriptions concise: Limit outputs to 100 words while maximizing vivid imagery.
+
+  ###What Not To Do###
+  - DO NOT return any response other than Flux prompt itself.
+  - DO NOT use object of strawberry, pickle. 
+      

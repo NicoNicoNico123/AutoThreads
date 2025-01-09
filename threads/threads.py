@@ -13,13 +13,14 @@ class Threads:
         if not self.id or not self.access_token:
             raise ValueError("THREADS_ID or THREADS_ACCESS_TOKEN environment variables are not set")
 
-    def create_thread(self, text):
+    def create_thread(self, text, image_url):
         url = f"https://graph.threads.net/v1.0/{self.id}/threads"
 
         text_with_tag = f"{text}#generatedBygpt-4o-mini"
 
         params = {
-            "media_type": "TEXT",
+            "media_type": "IMAGE",
+            "image_url": image_url,
             "text": text_with_tag,
             "access_token": self.access_token
         }
@@ -35,8 +36,8 @@ class Threads:
             print(f"Error creating thread: {e}")
             return None
 
-    def post_thread(self, text):
-        creation_id = self.create_thread(text)
+    def post_thread(self, *, text: str, image_url: str):
+        creation_id = self.create_thread(text, image_url)
         if not creation_id:
             return None
 

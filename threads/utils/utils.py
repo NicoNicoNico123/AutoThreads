@@ -4,7 +4,7 @@ def load_prompt_text(prompt,type):
     file_path = os.path.join(os.path.dirname(__file__), '..', 'prompt', f'{type}.yaml')
     
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             yaml_content = yaml.safe_load(file)
             
         if prompt in yaml_content:

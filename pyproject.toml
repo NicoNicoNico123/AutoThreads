@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "testing job"
 authors = ["Nico <zidnae852@gmail.com>"]
 readme = "README.md"
+packages = [{include = "threads"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -11,6 +12,7 @@ prefect = "*"
 langchain = "*"
 google-search-results = "*"
 langchain-openai = "*"
+cloudinary = "*"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
