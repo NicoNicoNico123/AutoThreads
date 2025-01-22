@@ -16,7 +16,7 @@ class Flux:
         model: str = "flux-pro-max",
         width: int = 1024,
         height: int = 768,
-        prompt_upsampling: bool = False,
+        prompt_upsampling: bool = True,
         seed: int = random.randint(0, 2**32 - 1),
         safety_tolerance: int = 5
     ) -> dict:

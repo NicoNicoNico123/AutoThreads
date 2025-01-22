@@ -5,6 +5,7 @@ from .img_transform import convert_and_get_jpg_url
 import logging
 logging.basicConfig(level=logging.INFO)
 from .threads import Threads
+import time
 
 class Main:
 
@@ -50,4 +51,8 @@ class Main:
     # Threads().main(output)
 
 if __name__ == "__main__":
-    Main().generate_thread(text="Hello, Threads!")
+    try:
+        main = Main()
+        main.generate_thread(text="Hello, Threads!")
+    except Exception as e:
+        logging.error(f"Error running main: {str(e)}")
