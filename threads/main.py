@@ -3,11 +3,68 @@ from .serapi import SerpAPI
 from .flux import Flux
 from .img_transform import convert_and_get_jpg_url
 import logging
+from .comfy_api import GenImg
 logging.basicConfig(level=logging.INFO)
 from .threads import Threads
 import time
+import os
+import json
+from datetime import datetime
 
 class Main:
+
+    def local_thread(self):
+
+        max_retries = 3
+
+        for attempt in range(max_retries):
+            try:
+                prompttext = ChainPrompt().flux_prompt()
+                logging.info(f"Flux prompt: {prompttext}")
+                # Setup workflow (only once)
+                gen_img = GenImg()
+                workflow_path = os.path.join('threads','workflow', 'yi_ying.json') 
+                workflow = gen_img.load_workflow(workflow_path)      
+
+                if workflow is None:
+                    logging.error("Failed to load workflow")        
+                    return None
+                
+                workflowjson = json.loads(workflow)
+                id_to_title = {id: details.get('_meta', {}).get('title', '') for id, details in workflowjson.items()}
+                positive_prompt = [key for key, value in id_to_title.items() if value == 'Positive Prompt'][0]
+                save_image_node = [key for key, value in id_to_title.items() if value == 'Save Image'][0]
+
+                # Set up generation parameters
+                timestamp = datetime.now().strftime("%y%m%d_%H%M")
+                workflowjson.get(positive_prompt)['inputs']['text'] = prompttext
+                workflowjson.get(save_image_node)['inputs']['filename_prefix'] = timestamp + '_yi_ying'
+
+                # Generate and post images
+                images_name = gen_img.generate_image_by_prompt(workflowjson, './output/', save_previews=False)
+                logging.info(f"Generated images: {images_name}")
+
+                for image_name in images_name:
+                    image_url = convert_and_get_jpg_url("output/" + image_name)
+                    logging.info(f"Final image URL: {image_url}")
+                    creation_id = Threads().post_thread(text="", image_url=image_url)
+                    logging.info(f"Thread creation_id created: {creation_id}")
+                    if not creation_id:
+                        raise ValueError(f"Failed to post thread for image: {image_name}")
+                    print("Thread posted successfully:", creation_id)
+
+                return True  # Return True on successful completion
+
+            except Exception as e:
+                logging.error(f"Attempt {attempt + 1}/{max_retries} failed: {str(e)}")
+                if attempt < max_retries - 1:
+                    sleep_time = (2 ** attempt) * 2  # Exponential backoff: 2, 4, 8 seconds
+                    logging.info(f"Retrying in {sleep_time} seconds...")
+                    time.sleep(sleep_time)
+                else:
+                    logging.error("All retry attempts exhausted")
+        
+        return None  # Return None if all retries failed
 
     def generate_thread(self, text: str):
         
@@ -53,6 +110,6 @@ class Main:
 if __name__ == "__main__":
     try:
         main = Main()
-        main.generate_thread(text="Hello, Threads!")
+        main.local_thread()
     except Exception as e:
         logging.error(f"Error running main: {str(e)}")

@@ -26,21 +26,25 @@ system_prompt: |
   - **避免**直接複製整個新聞標題作為推文。
 
 image_prompt: |
-  Objective: Create a concise prompt (under 100 words) describing a selfie of an Asian girl wearing casual attire such as a Tight-fitting t-shirt, tank top, or similar clothing with a braless style. Ensure the composition highlights casual elegance and aligns with a natural, amateur aesthetic.
+  Create a concise prompt (under 100 words) describing a selfie of an Asian girl named yi_ying wearing casual attire.
 
   Prompt Structure:
 
-  File Format: Begin with "Amateur selfie."
+  File Format: Begin with "IMG_XXXX.JPG"
   Description: Provide a concise sentence detailing:
-  Quality: Mention photo quality (e.g., "potato-quality").
-  Subject: Briefly describe the subject and expression.
-  Attire: Focus on casual clothing such as t-shirts or tank tops with braless styling.
-  Overall Style: Optionally include notes on the tone or atmosphere (e.g., "low light, natural setting").
-  Example Output:
-  Amateur selfie of Potato-quality webcam of an attractive Asian woman.Indoors, in low light, wearing a Tight-fitting t-shirt with braless styling. Low quality.
+  Subject: Describe yi_ying, including her expression and pose.
+  Attire: Focus on  clothing, such as tank tops, halter tops, or braless styling that accentuates her breasts or reveals ample cleavage.
+  Overall Style: Optionally include the atmosphere, lighting.
+
+  Few shot examples:
+  IMG_232.JPG of yi_ying, a young Asian woman, sitting on a wooden bench. She wears a beige halter top that hugs her chest snugly, accentuating her breasts, paired with floral-patterned pants. Her natural makeup includes pink blush and nude lipstick, and sunglasses rest on her head. 
+
+  IMG_1233.JPG of yi_ying in a gray ribbed tank top and matching shorts. The top is form-fitting, emphasizing her curves, with thin straps resting on her shoulders. She stands in a cluttered store filled with shelves of various items, including firearms and tactical gear, under artificial lighting. She casually lifts her arm to touch her hair while gazing directly at the camera.
+
+  IMG_2664.JPG of yi_ying in a white bikini top with a deep neckline, standing on a sandy beach during sunset. The fabric gently contours to her breasts, enhancing her silhouette. The sky is painted in hues of pink, orange, and purple. Several people are scattered in the distance, including a person flying a colorful kite. The natural light of the setting sun casts a warm glow, enhancing the relaxed beach atmosphere.
 
   Guidelines:
-
-  Focus on casual clothing like t-shirts or tank tops with braless styling.
-  Maintain a casual, amateur aesthetic with a focus on natural lighting and setting.
-  Ensure the description reflects a relaxed, natural vibe while emphasizing the attire.
+  Maintain a casual, amateur aesthetic with a preference for natural lighting and authentic settings.
+  ensure the description reflects a relaxed, natural vibe while emphasizing yi_ying's attire and body contours in a tasteful, natural way.
+  Focus on outfits that subtly highlight her medium-sized breasts, such as fitted tops, plunging necklines, or braless styles, while keeping the composition tasteful.
+  Output 1 prompt only without any additional text.

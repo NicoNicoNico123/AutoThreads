@@ -1,0 +1,694 @@
+{
+  "6": {
+    "inputs": {
+      "text": [
+        "217",
+        0
+      ],
+      "clip": [
+        "242",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "low quality, worst quality, deformed, distorted, disfigured, motion smear, motion artifacts, fused fingers, bad anatomy, weird hand, ugly",
+      "clip": [
+        "242",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "72",
+        0
+      ],
+      "vae": [
+        "241",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "69": {
+    "inputs": {
+      "frame_rate": 25,
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "LTXVConditioning",
+    "_meta": {
+      "title": "LTXVConditioning"
+    }
+  },
+  "71": {
+    "inputs": {
+      "steps": [
+        "122",
+        0
+      ],
+      "max_shift": 2.05,
+      "base_shift": 0.9500000000000001,
+      "stretch": true,
+      "terminal": 0.1,
+      "latent": [
+        "184",
+        1
+      ]
+    },
+    "class_type": "LTXVScheduler",
+    "_meta": {
+      "title": "LTXVScheduler"
+    }
+  },
+  "72": {
+    "inputs": {
+      "add_noise": true,
+      "noise_seed": [
+        "227",
+        0
+      ],
+      "cfg": [
+        "121",
+        0
+      ],
+      "model": [
+        "184",
+        0
+      ],
+      "positive": [
+        "69",
+        0
+      ],
+      "negative": [
+        "69",
+        1
+      ],
+      "sampler": [
+        "73",
+        0
+      ],
+      "sigmas": [
+        "71",
+        0
+      ],
+      "latent_image": [
+        "188",
+        0
+      ]
+    },
+    "class_type": "SamplerCustom",
+    "_meta": {
+      "title": "SamplerCustom"
+    }
+  },
+  "73": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "78": {
+    "inputs": {
+      "image": "123_287.jpeg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image Input"
+    }
+  },
+  "79": {
+    "inputs": {
+      "frame_rate": 25,
+      "loop_count": 0,
+      "filename_prefix": "LTXVideo_ComfyUI_28-01-2025_170438",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": false,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "80": {
+    "inputs": {
+      "width": [
+        "229",
+        0
+      ],
+      "height": [
+        "229",
+        0
+      ],
+      "upscale_method": "nearest-exact",
+      "keep_proportion": true,
+      "divisible_by": 2,
+      "crop": "center",
+      "image": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "81": {
+    "inputs": {
+      "frame_rate": [
+        "220",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": "temp",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": [
+        "210",
+        0
+      ],
+      "save_metadata": false,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": false,
+      "images": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "82": {
+    "inputs": {
+      "index": -1,
+      "filenames": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "VHS_SelectFilename",
+    "_meta": {
+      "title": "Select Filename 🎥🅥🅗🅢"
+    }
+  },
+  "83": {
+    "inputs": {
+      "video": [
+        "82",
+        0
+      ],
+      "force_rate": 0,
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideoPath",
+    "_meta": {
+      "title": "Load Video (Path) 🎥🅥🅗🅢"
+    }
+  },
+  "96": {
+    "inputs": {
+      "int": 97
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Video Length"
+    }
+  },
+  "121": {
+    "inputs": {
+      "Number": "3"
+    },
+    "class_type": "Float",
+    "_meta": {
+      "title": "CFG"
+    }
+  },
+  "122": {
+    "inputs": {
+      "int": 30
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Steps"
+    }
+  },
+  "162": {
+    "inputs": {
+      "text": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Florence Text (Auto generated)"
+    }
+  },
+  "168": {
+    "inputs": {
+      "String": ""
+    },
+    "class_type": "String",
+    "_meta": {
+      "title": "Pre Text"
+    }
+  },
+  "169": {
+    "inputs": {
+      "String": ""
+    },
+    "class_type": "String",
+    "_meta": {
+      "title": "After text"
+    }
+  },
+  "171": {
+    "inputs": {
+      "text": [
+        "174",
+        0
+      ],
+      "find": "photo",
+      "replace": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "Text Find and Replace",
+    "_meta": {
+      "title": "Find and Replace"
+    }
+  },
+  "172": {
+    "inputs": {
+      "model": "microsoft/Florence-2-large",
+      "precision": "fp16",
+      "attention": "sdpa"
+    },
+    "class_type": "DownloadAndLoadFlorence2Model",
+    "_meta": {
+      "title": "Model"
+    }
+  },
+  "173": {
+    "inputs": {
+      "text_input": "",
+      "task": "more_detailed_caption",
+      "fill_mask": false,
+      "keep_model_loaded": false,
+      "max_new_tokens": 1024,
+      "num_beams": 3,
+      "do_sample": true,
+      "output_mask_select": "",
+      "seed": [
+        "227",
+        0
+      ],
+      "image": [
+        "83",
+        0
+      ],
+      "florence2_model": [
+        "172",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "174": {
+    "inputs": {
+      "text": [
+        "173",
+        2
+      ],
+      "find": "image",
+      "replace": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "Text Find and Replace",
+    "_meta": {
+      "title": "Find and Replace"
+    }
+  },
+  "175": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "false",
+      "text_a": [
+        "168",
+        0
+      ],
+      "text_b": [
+        "177",
+        0
+      ],
+      "text_c": [
+        "169",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "176": {
+    "inputs": {
+      "String": "video"
+    },
+    "class_type": "String",
+    "_meta": {
+      "title": "replace \"photo/image\" caption with"
+    }
+  },
+  "177": {
+    "inputs": {
+      "text": [
+        "171",
+        0
+      ],
+      "find": "picture",
+      "replace": [
+        "176",
+        0
+      ]
+    },
+    "class_type": "Text Find and Replace",
+    "_meta": {
+      "title": "Find and Replace"
+    }
+  },
+  "180": {
+    "inputs": {
+      "pixels": [
+        "187",
+        0
+      ],
+      "vae": [
+        "241",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "181": {
+    "inputs": {
+      "layers": "14"
+    },
+    "class_type": "LTXAttnOverride",
+    "_meta": {
+      "title": "LTX Attention Override"
+    }
+  },
+  "182": {
+    "inputs": {
+      "model": [
+        "240",
+        0
+      ]
+    },
+    "class_type": "ModifyLTXModel",
+    "_meta": {
+      "title": "Modify LTX Model"
+    }
+  },
+  "183": {
+    "inputs": {
+      "scale": 1,
+      "rescale": 0.25,
+      "cfg": [
+        "222",
+        0
+      ],
+      "model": [
+        "182",
+        0
+      ],
+      "attn_override": [
+        "181",
+        0
+      ]
+    },
+    "class_type": "LTXPerturbedAttention",
+    "_meta": {
+      "title": "LTX Apply Perturbed Attention"
+    }
+  },
+  "184": {
+    "inputs": {
+      "index": 0,
+      "insert": false,
+      "model": [
+        "183",
+        0
+      ],
+      "latent": [
+        "188",
+        0
+      ],
+      "image_latent": [
+        "180",
+        0
+      ]
+    },
+    "class_type": "AddLatentGuide",
+    "_meta": {
+      "title": "Add LTX Latent Guide"
+    }
+  },
+  "187": {
+    "inputs": {
+      "width": [
+        "229",
+        0
+      ],
+      "height": [
+        "229",
+        0
+      ],
+      "upscale_method": "nearest-exact",
+      "keep_proportion": true,
+      "divisible_by": 32,
+      "crop": "center",
+      "image": [
+        "207",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "188": {
+    "inputs": {
+      "width": [
+        "187",
+        1
+      ],
+      "height": [
+        "187",
+        2
+      ],
+      "length": [
+        "96",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLTXVLatentVideo",
+    "_meta": {
+      "title": "EmptyLTXVLatentVideo"
+    }
+  },
+  "196": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "FinalFrameSelector",
+    "_meta": {
+      "title": "Final Frame Selector"
+    }
+  },
+  "197": {
+    "inputs": {
+      "images": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image / Last Frame"
+    }
+  },
+  "207": {
+    "inputs": {
+      "boolean": false,
+      "on_true": [
+        "78",
+        0
+      ],
+      "on_false": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "Extend Video = True"
+    }
+  },
+  "210": {
+    "inputs": {
+      "int": 25
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "SALT  -   (CRF)"
+    }
+  },
+  "216": {
+    "inputs": {
+      "String": "The woman is wearing a sleeveless tank top and has her hair pulled back in a ponytail. She appears to be looking directly at the camera and slight move"
+    },
+    "class_type": "String",
+    "_meta": {
+      "title": "Your own Prompt"
+    }
+  },
+  "217": {
+    "inputs": {
+      "boolean": false,
+      "on_true": [
+        "216",
+        0
+      ],
+      "on_false": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]",
+    "_meta": {
+      "title": "Switch to own prompt = TRUE"
+    }
+  },
+  "220": {
+    "inputs": {
+      "float": 3
+    },
+    "class_type": "Cfg Literal",
+    "_meta": {
+      "title": "PEPPER  -  (Frame Rate)"
+    }
+  },
+  "222": {
+    "inputs": {
+      "float": 3
+    },
+    "class_type": "Cfg Literal",
+    "_meta": {
+      "title": "CFG"
+    }
+  },
+  "227": {
+    "inputs": {
+      "seed": 29063834720457
+    },
+    "class_type": "Seed Generator",
+    "_meta": {
+      "title": "Seed Generator"
+    }
+  },
+  "229": {
+    "inputs": {
+      "int": 768
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Dimension (default 768)"
+    }
+  },
+  "240": {
+    "inputs": {
+      "unet_name": "ltxv/ltx-video-2b-v0.9.1-revised-f16.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
+    }
+  },
+  "241": {
+    "inputs": {
+      "vae_name": "ltx/ltx-video-vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "242": {
+    "inputs": {
+      "clip_name": "ltxv/t5-v1_1-xxl-encoder-f16.gguf",
+      "type": "ltxv"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "CLIPLoader (GGUF)"
+    }
+  }
+}

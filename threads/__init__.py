@@ -3,6 +3,7 @@ from .utils import load_prompt_text
 from .threads import Threads
 from .serapi import SerpAPI
 from .flux import Flux
+from .comfy_api import GenImg
 
 
-__all__ = ['ChainPrompt', 'load_prompt_text', 'Threads', 'SerpAPI', 'Flux']
+__all__ = ['ChainPrompt', 'load_prompt_text', 'Threads', 'SerpAPI', 'Flux', 'GenImg']

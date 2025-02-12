@@ -1,0 +1,306 @@
+{
+    "6": {
+      "inputs": {
+        "text": [
+          "60",
+          0
+        ],
+        "clip": [
+          "85",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "8": {
+      "inputs": {
+        "samples": [
+          "13",
+          0
+        ],
+        "vae": [
+          "10",
+          0
+        ]
+      },
+      "class_type": "VAEDecode"
+    },
+    "10": {
+      "inputs": {
+        "vae_name": "ae.safetensors"
+      },
+      "class_type": "VAELoader"
+    },
+    "11": {
+      "inputs": {
+        "clip_name1": "t5xxl_fp8_e4m3fn.safetensors",
+        "clip_name2": "clip_l.safetensors",
+        "type": "flux"
+      },
+      "class_type": "DualCLIPLoader"
+    },
+    "12": {
+      "inputs": {
+        "unet_name": "flux1DevAsian_v10FP16.safetensors",
+        "weight_dtype": "fp8_e4m3fn"
+      },
+      "class_type": "UNETLoader"
+    },
+    "13": {
+      "inputs": {
+        "noise": [
+          "25",
+          0
+        ],
+        "guider": [
+          "22",
+          0
+        ],
+        "sampler": [
+          "16",
+          0
+        ],
+        "sigmas": [
+          "17",
+          0
+        ],
+        "latent_image": [
+          "55",
+          0
+        ]
+      },
+      "class_type": "SamplerCustomAdvanced"
+    },
+    "16": {
+      "inputs": {
+        "sampler_name": [
+          "83:4",
+          0
+        ]
+      },
+      "class_type": "KSamplerSelect"
+    },
+    "17": {
+      "inputs": {
+        "scheduler": [
+          "83:3",
+          0
+        ],
+        "steps": [
+          "83:0",
+          0
+        ],
+        "denoise": 1,
+        "model": [
+          "37",
+          0
+        ]
+      },
+      "class_type": "BasicScheduler"
+    },
+    "22": {
+      "inputs": {
+        "model": [
+          "37",
+          0
+        ],
+        "conditioning": [
+          "26",
+          0
+        ]
+      },
+      "class_type": "BasicGuider"
+    },
+    "25": {
+      "inputs": {
+        "noise_seed": [
+          "83:2",
+          0
+        ]
+      },
+      "class_type": "RandomNoise"
+    },
+    "26": {
+      "inputs": {
+        "guidance": [
+          "83:1",
+          0
+        ],
+        "conditioning": [
+          "6",
+          0
+        ]
+      },
+      "class_type": "FluxGuidance"
+    },
+    "37": {
+      "inputs": {
+        "max_shift": 1.15,
+        "base_shift": 0.5,
+        "width": [
+          "55",
+          1
+        ],
+        "height": [
+          "55",
+          2
+        ],
+        "model": [
+          "85",
+          0
+        ]
+      },
+      "class_type": "ModelSamplingFlux"
+    },
+    "55": {
+      "inputs": {
+        "resolution": "832x1152 (0.72)",
+        "batch_size": 2,
+        "width_override": 0,
+        "height_override": 0
+      },
+      "class_type": "SDXLEmptyLatentSizePicker+"
+    },
+    "60": {
+      "inputs": {
+        "wildcard_text": "p0k13s, IMG-7587.JPG, 25 years old Asian womanstanding in what appears to be a store. She have big-tits with tank top. She is wearing face mask, and her eyes are looking directly at the camera. The lighting is warm and highlights the merchandise as well as the subject. She is carrying bag on her left shoulder.",
+        "populated_text": "p0k13s, IMG-7587.JPG, 25 years old Asian womanstanding in what appears to be a store. She have big-tits with tank top. She is wearing face mask, and her eyes are looking directly at the camera. The lighting is warm and highlights the merchandise as well as the subject. She is carrying bag on her left shoulder.",
+        "mode": true,
+        "seed": 233696043067968,
+        "Select to add Wildcard": "Select the Wildcard to add to the text"
+      },
+      "class_type": "ImpactWildcardProcessor"
+    },
+    "71": {
+      "inputs": {
+        "filename": "123",
+        "path": "test",
+        "extension": "jpeg",
+        "steps": [
+          "83:0",
+          0
+        ],
+        "cfg": [
+          "83:1",
+          0
+        ],
+        "modelname": "acornIsSpinningFLUX_v11.safetensors",
+        "sampler_name": [
+          "83:4",
+          1
+        ],
+        "scheduler": [
+          "83:5",
+          1
+        ],
+        "positive": [
+          "87",
+          0
+        ],
+        "negative": [
+          "84",
+          0
+        ],
+        "seed_value": [
+          "83:2",
+          0
+        ],
+        "width": [
+          "55",
+          1
+        ],
+        "height": [
+          "55",
+          2
+        ],
+        "lossless_webp": true,
+        "quality_jpeg_or_webp": 100,
+        "optimize_png": false,
+        "counter": 0,
+        "denoise": 1,
+        "clip_skip": 0,
+        "time_format": "%Y-%m-%d-%H%M%S",
+        "save_workflow_as_json": true,
+        "embed_workflow_in_png": true,
+        "images": [
+          "8",
+          0
+        ]
+      },
+      "class_type": "Image Saver"
+    },
+    "84": {
+      "inputs": {
+        "String": ""
+      },
+      "class_type": "String"
+    },
+    "85": {
+      "inputs": {
+        "wildcard_text": "<lora:flux/SameFace_Fix:-0.45>\n<lora:flux/amateurphoto-v6-forcu:0.35>\n<lora:flux/flux_realism_lora:0.35>\n<lora:flux/p0k13s_v1:0.9>",
+        "populated_text": "<lora:flux/SameFace_Fix:-0.45>\n<lora:flux/amateurphoto-v6-forcu:0.35>\n<lora:flux/flux_realism_lora:0.35>\n<lora:flux/p0k13s_v1:0.9>",
+        "mode": true,
+        "Select to add LoRA": "Select the LoRA to add to the text",
+        "Select to add Wildcard": "Select the Wildcard to add to the text",
+        "seed": 587437989867094,
+        "model": [
+          "12",
+          0
+        ],
+        "clip": [
+          "11",
+          0
+        ]
+      },
+      "class_type": "ImpactWildcardEncode"
+    },
+    "87": {
+      "inputs": {
+        "a": [
+          "85",
+          3
+        ],
+        "b": [
+          "60",
+          0
+        ]
+      },
+      "class_type": "JWStringConcat"
+    },
+    "83:0": {
+      "inputs": {
+        "int": 35
+      },
+      "class_type": "Int Literal"
+    },
+    "83:1": {
+      "inputs": {
+        "float": 10
+      },
+      "class_type": "Float Literal (Image Saver)"
+    },
+    "83:2": {
+      "inputs": {
+        "seed": 249141994335173
+      },
+      "class_type": "Seed Generator"
+    },
+    "83:3": {
+      "inputs": {
+        "scheduler": "ddim_uniform"
+      },
+      "class_type": "Scheduler Selector"
+    },
+    "83:4": {
+      "inputs": {
+        "sampler_name": "deis"
+      },
+      "class_type": "Sampler Selector (Image Saver)"
+    },
+    "83:5": {
+      "inputs": {
+        "scheduler": "ddim_uniform"
+      },
+      "class_type": "Scheduler Selector (Image Saver)"
+    }
+  }

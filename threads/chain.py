@@ -27,7 +27,7 @@ class ChainPrompt:
 
     def flux_prompt(self):
         prompt = PromptTemplate.from_template(load_prompt_text("image_prompt", "system_prompt"))
-        model = ChatOpenAI(model="gpt-4o-mini", 
+        model = ChatOpenAI(model="deepseek-chat", 
                         base_url=self.base_url,
                         api_key=self.api_key,
                         temperature=1

@@ -5,6 +5,10 @@ __pycache__/
 /ipynb
 tests/notebook/
 
+/output
+.vscode
+/notebook
+
 # C extensions
 *.so
 

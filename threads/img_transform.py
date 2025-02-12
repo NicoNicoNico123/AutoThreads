@@ -18,6 +18,6 @@ def convert_and_get_jpg_url(image_url):
 
 if __name__ == "__main__":
     # Example usage
-    cdn_image_url = "https://delivery-eu1.bfl.ai/results/a2605d8fe8954dc581a87cabacd43815/sample.jpeg?se=2025-01-07T08%3A46%3A02Z&sp=r&sv=2024-11-04&sr=b&rsct=image/jpeg&sig=Y7EYAPPTG6rTICg3GvYb7Rvcf7YRyxMCFiTPfRgV0ss%3D"  # Replace with your CDN URL
+    cdn_image_url = "output/250211_1920_yi_ying_00002_.png"  # Replace with your CDN URL
     jpg_url = convert_and_get_jpg_url(cdn_image_url)
     print(f"Converted JPG URL: {jpg_url}")

@@ -16,12 +16,11 @@ class Threads:
     def create_thread(self, text, image_url):
         url = f"https://graph.threads.net/v1.0/{self.id}/threads"
 
-        text_with_tag = f"{text}#generatedBygpt-4o-mini"
 
         params = {
             "media_type": "IMAGE",
             "image_url": image_url,
-            "text": text_with_tag,
+            "text": text,
             "access_token": self.access_token
         }
 
