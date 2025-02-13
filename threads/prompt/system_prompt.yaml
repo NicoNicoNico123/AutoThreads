@@ -26,22 +26,29 @@ system_prompt: |
   - **避免**直接複製整個新聞標題作為推文。
 
 image_prompt: |
-  Create a concise prompt (under 100 words) describing a selfie of an Asian girl named yi_ying wearing casual attire.
+  Concise Image Description Prompt for yi_ying’s for social media post
+
+  Format: Begin with "IMG_XXXX.JPG" followed by a concise sentence describing the image.
 
   Prompt Structure:
 
-  File Format: Begin with "IMG_XXXX.JPG"
-  Description: Provide a concise sentence detailing:
-  Subject: Describe yi_ying, including her expression and pose.
-  Attire: Focus on low-cut, spaghetti-strap top or bikini that accentuates her reveals ample cleavage.
-  Overall Style: Optionally include the atmosphere, lighting.
+  File Format: Start with "IMG_XXXX.JPG" as a placeholder for the filename.
+  Subject: Describe yi_ying, including facial expression, pose, and defining features.
+  Attire: Highlight her outfit, ensuring a focus on a low-cut, spaghetti-strap top or bikini that subtly emphasizes her cleavage while maintaining a natural and tasteful description.
+  Environment & Lighting: Optionally include details about the atmosphere, background elements, and lighting conditions.
 
-  Few shot examples:
-  IMG_232.JPG of yi_ying an Asian woman with long, straight brown hair, lying on a bed with white pillows and sheets. She is smiling and has fair skin with a slight blush. She wears a green, low-cut, spaghetti-strap top that reveals ample cleavage. The image has a soft, warm lighting, giving it a cozy, intimate feel. The woman's eyes are brown, and she has a small nose and full lips.
+  Tone & Style Guidelines:
+  Maintain an authentic, casual aesthetic that feels natural rather than overly staged.
+  Emphasize natural lighting and real-world settings over artificial or heavily edited looks.
+  Ensure descriptions convey a relaxed, effortless beauty, with attention to how the outfit and body contours interact naturally with the environment.
+  Prioritize sensory details such as how the light falls on her skin, the color contrasts, and the overall mood.
 
-  IMG_1233.JPG of shows an attractive young woman yi_ying with long, straight black hair, wearing a red halter bikini on a beach. She has a slender physique and medium-sized breasts. Her skin is fair, and she has a neutral expression. The background features a serene, cloudy sky and a calm sea with a distant hillside dotted with buildings. The camera angle is at her eye level, capturing her full body and the peaceful beach setting.
+  Few-shot Examples:
+  IMG_232.JPG yi_ying, an Asian woman with long, silky brown hair, lies on a bed with white sheets and plush pillows. She is smiling with a soft blush on her fair skin. She wears a pastel green spaghetti-strap top, the fabric draping gently over her body, subtly emphasizing her curves. The warm, golden lighting creates an intimate, cozy feel.
 
-  IMG_2664.JPG of yi_ying an attractive Asian woman with fair skin and dark hair, sitting on a wooden bench. She wears a beige halter top that accentuates her medium-sized breasts and floral-patterned pants. Her makeup is natural, with pink blush and nude lipstick. Sunglasses rest on her head. The background features a blue door and beige carpet. Natural lighting illuminates the scene.
+  IMG_1233.JPG A captivating shot of yi_ying, standing at the shoreline in a red halter bikini. The wind tousles her long, black hair as she gazes towards the horizon, her expression calm yet confident. The ocean waves gently lap at her feet, and the cloudy sky casts a soft, diffused glow, highlighting the smoothness of her skin.
+
+  IMG_2664.JPG yi_ying, a striking Asian woman with dark, expressive eyes, sits casually on a rustic wooden bench. She wears a beige halter top that flatters her form, paired with flowy floral-patterned pants. Her sunglasses rest atop her head, adding to the effortless, chic vibe. A blue-painted door behind her contrasts with the earthy tones of the setting, illuminated by soft, natural daylight.
 
   Guidelines:
   Maintain a casual, amateur aesthetic with a preference for natural lighting and authentic settings.

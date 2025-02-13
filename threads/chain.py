@@ -30,7 +30,7 @@ class ChainPrompt:
         model = ChatOpenAI(model="deepseek-chat", 
                         base_url=self.base_url,
                         api_key=self.api_key,
-                        temperature=1
+                        temperature=1.5
                         )
         chain = model | StrOutputParser()
         return chain.invoke(prompt.format())

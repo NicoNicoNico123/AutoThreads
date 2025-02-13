@@ -30,6 +30,6 @@ def daily_flow():
 if __name__ == "__main__":
     daily_flow.serve(
         name="yiying_threads_flow",
-        interval=timedelta(minutes=random.randint(30, 120)),
+        interval=timedelta(minutes=random.randint(120, 360)),
         tags=["threads"]
     )

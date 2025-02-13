@@ -13,7 +13,7 @@ Automate Threads is a Python project that fetches trending topics from Google, g
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/automate-threads.git
+   git clone https://github.com/NicoNicoNico123/automate-threads.git
    cd automate-threads
    ```
 
